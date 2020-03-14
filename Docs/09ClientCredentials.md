@@ -1,5 +1,4 @@
 # Client credentials
 On this video we setup the basic 
-- Install nuget
-- Configure startup
+- Install setup [identity server 4](IdentityServer.md)
 - Create a config static file (8:45)

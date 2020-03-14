@@ -26,7 +26,7 @@ namespace ApiTwo.Controllers
             var serverClient = httpClientFactory.CreateClient();
 
             //the authority url
-            var discoveryDocument = await serverClient.GetDiscoveryDocumentAsync("https://localhost:44305/");
+            var discoveryDocument = await serverClient.GetDiscoveryDocumentAsync("https://localhost:5101/");
 
             var tokenResponse = await serverClient.RequestClientCredentialsTokenAsync(
                 new ClientCredentialsTokenRequest
@@ -42,7 +42,7 @@ namespace ApiTwo.Controllers
             apiClient.SetBearerToken(tokenResponse.AccessToken);
 
             //Api One url
-            var response = await apiClient.GetAsync("https://localhost:5021/secret");
+            var response = await apiClient.GetAsync("https://localhost:5011/api/secret");
             var content = await response.Content.ReadAsStringAsync();
 
             return Ok(new

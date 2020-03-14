@@ -25,7 +25,7 @@ namespace ApiOne
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            
             services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", config =>
                 {
@@ -33,7 +33,7 @@ namespace ApiOne
                     config.Audience = "ApiOne";
 
                 });
-            services.AddHttpClient();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -20,7 +20,7 @@
     "ApiTwo": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "Home",
+      "launchUrl": "api/Home",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

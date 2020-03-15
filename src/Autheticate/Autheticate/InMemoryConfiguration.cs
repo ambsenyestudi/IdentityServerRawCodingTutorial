@@ -41,7 +41,9 @@ namespace Autheticate
                         "ApiOne" ,
                         "ApiTwo",
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,}
+                        IdentityServerConstants.StandardScopes.Profile
+                    },
+                    RequireConsent = false
 
                 }
 

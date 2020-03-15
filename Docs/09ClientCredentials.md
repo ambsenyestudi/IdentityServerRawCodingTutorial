@@ -1,5 +1,5 @@
 # Client credentials
-On this video we setup the basic 
+On [Client credentials](https://www.youtube.com/watch?v=jARHHUsljeo&list=PLOeFnOV9YBa7dnrjpOG6lMpcyd7Wn7E8V&index=11) video we setup the basic 
 - Install setup [identity server 4](IdentityServer.md)
 - Create a config static file (8:45)
 - Add configurations to startup setup (11:30)

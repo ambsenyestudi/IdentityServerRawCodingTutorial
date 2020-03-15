@@ -6,5 +6,5 @@ I'll basically use this as docs repo and my branches will be the code from the v
 
 ### Video notes
 - 09 Client credentials [notes](Docs/09ClientCredentials.md)
-- 10 Client credentials [notes](Docs/10_AuthorizationCodeFlow.md)
-- 11 Client credentials [notes](Docs/11_IdentityLoginRegister.md)
+- 10 Authorization Code Flow [notes](Docs/10_AuthorizationCodeFlow.md)
+- 11 Identity Login and Register [notes](Docs/11_IdentityLoginRegister.md)

@@ -13,3 +13,8 @@ Notes on this [video](https://www.youtube.com/watch?v=bcfThLdEcOM&list=PLOeFnOV9
 - Add new claim to client allowed scopes (InMemoryConfiguration client_id_mvc)
 - Configure scopes at AddOpenIdConnect on MVCClient Startup (28:00)
 - Keep our token small and get user claims with config.GetClaimsFromUserInfoEndpoint(31:45) 
+- Explains where claims are placed on each token (33:10)
+> For me the claim apears at the id token
+- How claims are mapped (34:00)
+- Clear the scope at MVCClient statup(38:30)
+- Hit api one from MVCClient (40:30)

@@ -24,7 +24,12 @@ namespace Autheticate
 
                 var user = new IdentityUser("bob");
                 userManager.CreateAsync(user, "password").GetAwaiter().GetResult();
-                
+                userManager.AddClaimAsync(user, new Claim("rc.grandma", "big.cookie"))
+                   .GetAwaiter().GetResult();
+                userManager.AddClaimAsync(user, 
+                    new Claim("rc.api.grandma", "big.api.cookie"))
+                   .GetAwaiter().GetResult();
+
             }
             host.Run();
         }

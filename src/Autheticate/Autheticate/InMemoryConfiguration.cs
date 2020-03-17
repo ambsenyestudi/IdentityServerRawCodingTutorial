@@ -53,6 +53,7 @@ namespace Autheticate
                         //IdentityServerConstants.StandardScopes.Profile,
                         "rc.scope"
                     },
+                    AllowOfflineAccess = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
                     RequireConsent = false
 

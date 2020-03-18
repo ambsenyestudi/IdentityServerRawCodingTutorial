@@ -7,3 +7,5 @@ he original video of Raw Code [Refres Token](https://www.youtube.com/watch?v=Klg
 - Add offline access scope At MVCClient Starupt (1:15)
 - Modify Identity Server Api InMemoryConfig, Allow ofline access (1:30)
 - Get discovery document for our refresh tocken method at MVCClient (4:20)
+- Test RefreshAccessToken method, tells us invalid client, clinet_mvc_secret was wrong (11:00)
+- Fixing it to clinet_secret_mvc we have the identity token and the access token (12:30)

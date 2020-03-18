@@ -40,6 +40,9 @@ namespace MVCClient.Controllers
 
             var idTokenClaims = new JwtSecurityTokenHandler().ReadJwtToken(idToken);
             var result = await GetSecret(accessToken);
+
+            await RefreshAccessToken();
+
             return View();
         }
         public async Task<string> GetSecret(string accessToken)
@@ -49,6 +52,39 @@ namespace MVCClient.Controllers
             var response = await apiClient.GetAsync("https://localhost:5011/api/secret");
             var content = await response.Content.ReadAsStringAsync();
             return content;
+        }
+
+        private async Task RefreshAccessToken()
+        {
+            var serverClient = httpClientFactory.CreateClient();
+            var discoveryDocument = await serverClient.GetDiscoveryDocumentAsync("https://localhost:5101");
+
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            var idToken = await HttpContext.GetTokenAsync("id_token");
+            var refreshToken = await HttpContext.GetTokenAsync("refresh_token");
+            
+            var refreshTokenClient = httpClientFactory.CreateClient();
+
+            var tokenResponse = await refreshTokenClient.RequestRefreshTokenAsync(new RefreshTokenRequest
+            {
+                Address = discoveryDocument.TokenEndpoint,
+                RefreshToken = refreshToken,
+                ClientId = "client_id_mvc",
+                ClientSecret = "client_secret_mvc" //"client_mvc_secret"
+            });
+            var authInfo = await HttpContext.AuthenticateAsync("Cookie");
+
+            authInfo.Properties.UpdateTokenValue("access_token", tokenResponse.AccessToken);
+            authInfo.Properties.UpdateTokenValue("refresh_token", tokenResponse.RefreshToken);
+
+            await HttpContext.SignInAsync("Cookie", authInfo.Principal, authInfo.Properties);
+
+            //just to make sure that tokens have been refreshed
+            var accessTokenDifferent = !accessToken.Equals(tokenResponse.AccessToken);
+            var idTokenDifferent = !idToken.Equals(tokenResponse.IdentityToken);
+            var refreshTokenDifferent = !refreshToken.Equals(tokenResponse.RefreshToken);
+
+            var a = 1;
         }
         public IActionResult Privacy()
         {

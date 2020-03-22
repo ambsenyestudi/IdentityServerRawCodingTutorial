@@ -13,3 +13,4 @@ I'll basically use this as docs repo and my branches will be the code from the v
 - 14 Implicit Flow [notes](Docs/14_ImplicitFlow.md)
 - 15 oidc-client.js [notes](Docs/15_OidcClientJs.md)
 - 16 Persitance, Claims, Refresing on Implicit flow [notes](Docs/16_PersistClaimsRefreshingImplicitFlow.md)
+- 17 EF Core Setup [notes](Docs/17_EFCoreSetup.md)

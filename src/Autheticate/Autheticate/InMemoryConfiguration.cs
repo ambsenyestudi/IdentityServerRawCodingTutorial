@@ -60,12 +60,15 @@ namespace Autheticate
                 },
                 new Client
                 {
+                    AccessTokenLifetime = 1,
                     AllowAccessTokensViaBrowser = true,
                     AllowedCorsOrigins = { "https://localhost:44365" },
                     AllowedGrantTypes=GrantTypes.Implicit,
                     AllowedScopes = {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        "ApiOne" 
+                        "ApiOne",
+                        "ApiTwo",
+                        "rc.scope"
                     },
                     ClientId="client_id_js",
                     RedirectUris = { "https://localhost:44365/home/signin" },

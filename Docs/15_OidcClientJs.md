@@ -15,3 +15,6 @@ The original video of Raw Code
 - call api script and button  (18:30)
 - correct axios.defaults.header its headers at main.js(20:30)
 - start api one (20:55)
+- ApiOne startup add cors rule(21:30)
+- Configure middleware also (22:30)
+- Remove allowCredentials on coors policy to avoid compile error(23:30)

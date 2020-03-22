@@ -32,3 +32,4 @@ The original video of Raw Code
 - Add signIn method to the home controller (38:30)
 - Implement extractToken at sign-in-callback-js (39:30)
 - Grab values and persist them in local storage (40:30)
+- Graab our real redirect address and use it to redirect us to the index page(43:30)

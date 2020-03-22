@@ -61,6 +61,7 @@ namespace Autheticate
                 new Client
                 {
                     AllowAccessTokensViaBrowser = true,
+                    AllowedCorsOrigins = { "https://localhost:44365" },
                     AllowedGrantTypes=GrantTypes.Implicit,
                     AllowedScopes = {
                         IdentityServerConstants.StandardScopes.OpenId,

@@ -57,6 +57,18 @@ namespace Autheticate
                     AlwaysIncludeUserClaimsInIdToken = true,
                     RequireConsent = false
 
+                },
+                new Client
+                {
+                    AllowAccessTokensViaBrowser = true,
+                    AllowedGrantTypes=GrantTypes.Implicit,
+                    AllowedScopes = {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        "ApiOne" 
+                    },
+                    ClientId="client_id_js",
+                    RedirectUris = { "https://localhost:44365/home/signin" },
+                    RequireConsent = false
                 }
 
             };
